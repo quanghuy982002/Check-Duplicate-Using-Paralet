@@ -1,0 +1,20 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredIdentifiers">
+        <list>
+          <option value="Learn.*" />
+          <option value="main.*" />
+          <option value="ALNS_VRPPD.instance.Instance.instance" />
+          <option value="ALNS_VRPPD.destroyOperator.RandomDestroy.instance" />
+          <option value="HardGame.CVRP.main.CVRP" />
+          <option value="HardGame.CVRP.Algorithm.ALNS.*" />
+          <option value="HardGame.CVRP.Algorithm.AdaptiveMechanism.*" />
+          <option value="HardGame.CVRP.Algorithm.NearestNeighbor.CVRP" />
+          <option value="skimage.measure.compare_ssim" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>
