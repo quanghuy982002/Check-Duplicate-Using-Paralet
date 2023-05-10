@@ -44,7 +44,6 @@ with concurrent.futures.ThreadPoolExecutor() as executor:
 # with concurrent.futures.ThreadPoolExecutor(max_workers=10000) as executor:
     # Tạo các task và submit chúng vào thread pool
     futures = [executor.submit(check_duplicate, pair[0], pair[1]) for pair in pairs]
-
     # Lấy kết quả trả về từ các task đã hoàn thành
     for future in concurrent.futures.as_completed(futures):
         result = future.result()
