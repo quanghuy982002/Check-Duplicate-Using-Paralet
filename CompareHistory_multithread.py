@@ -74,8 +74,6 @@ path = "./images_in"
 image_files = [os.path.join(path, f) for f in os.listdir(path) if
                os.path.isfile(os.path.join(path, f)) and f.endswith(('.png', '.jpg', '.jpeg', '.bmp'))]
 
-
-# Hàm kiểm tra đồng bộ hóa so sánh 2 bức ảnh
 def check_duplicate(img_path1, img_path2, duplicates):
     # Đọc ảnh từ file
     img1 = cv2.imread(img_path1)
@@ -115,7 +113,7 @@ for pair in pairs:
 
 for thread in threads:
     thread.join()
-
+#main đợi con đảm bảo chính xác đầy đủ đồng bộ
 end_time = time.time()
 
 # In ra danh sách các bức ảnh trùng lặp

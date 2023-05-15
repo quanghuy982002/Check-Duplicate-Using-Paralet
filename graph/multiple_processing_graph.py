@@ -10,7 +10,7 @@ plt.plot(x,y)
 plt.xlabel('Số lượng ảnh')
 plt.ylabel('Thời gian (s)')
 
-plt.title('Biểu đồ Multiple Core')
+plt.title('Biểu đồ Multiple Processing')
 # function to show the plot 
 plt.show() 
 

@@ -79,12 +79,12 @@ def compare_images(pair):
     return None
 
 if __name__ == '__main__':
-    start_time = time.time() # Lấy thời điểm bắt đầu chạy code
+    start_time = time.time() #
     pairs = [(i, j) for i in range(len(image_files)) for j in range(i + 1, len(image_files))]
     with Pool(processes=cpu_count()) as pool:
         results = pool.map(compare_images, pairs)
     duplicates = [res for res in results if res is not None]
-    end_time = time.time()  # Lấy thời điểm kết thúc chạy code
+    end_time = time.time()
     elapsed_time = end_time - start_time  # Tính thời gian chạy code
 
     # In ra danh sách các bức ảnh trùng lặp
@@ -96,4 +96,4 @@ if __name__ == '__main__':
         print("Không có bức ảnh trùng lặp trong thư mục này.")
 
     print("Thời gian chạy code: %.2f giây" % elapsed_time)
-
+print(cpu_count())

@@ -28,13 +28,13 @@ for i in range(len(image_files)):
         # Resize ảnh cùng kích thước
         img1_gray_resized = cv2.resize(img1_gray, (img2_gray.shape[1], img2_gray.shape[0]))
 
-        # Tính toán chỉ số correlation của histogram ảnh
-        hist_correlation = cv2.compareHist(cv2.calcHist([img1_gray_resized], [0], None, [256], [0, 256]),
+        # Tính toán chỉ số ssim của histogram ảnh
+        ssim_score = cv2.compareHist(cv2.calcHist([img1_gray_resized], [0], None, [256], [0, 256]),
                                            cv2.calcHist([img2_gray], [0], None, [256], [0, 256]),
                                            cv2.HISTCMP_CORREL)
+        print(cv2.calcHist([img1], [0, 1, 2], None, [8, 8, 8], [0, 256, 0, 256, 0, 256]))
 
-        # Nếu chỉ số correlation > 0.95, coi như 2 ảnh giống nhau và lưu vào danh sách các bức ảnh trùng lặp
-        if hist_correlation > 0.95:
+        if ssim_score > 0.95:
             duplicates.append((image_files[i], image_files[j]))
 
 end_time = time.time()  # Lấy thời điểm kết thúc chạy code

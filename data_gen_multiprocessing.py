@@ -61,8 +61,7 @@ def compare_images(pair):
     ssim_score = cv2.compareHist(cv2.calcHist([img1], [0, 1, 2], None, [8, 8, 8], [0, 256, 0, 256, 0, 256]),
                                  cv2.calcHist([img2], [0, 1, 2], None, [8, 8, 8], [0, 256, 0, 256, 0, 256]),
                                  cv2.HISTCMP_CORREL)
-
-    # Nếu chỉ số SSIM > 0.95, coi như 2 ảnh giống nhau và trả về số lượng ảnh trùng lặp
+    #calcHist(img, tham số màu RGB, vùng cụ thể, size bin color, range index color)
     if ssim_score > 0.95:
         return 1
     return 0
@@ -78,4 +77,5 @@ if __name__ == '__main__':
         end_time = time.time()  # Lấy thời điểm kết thúc chạy code
         elapsed_time = end_time - start_time  # Tính thời gian chạy code
         print("Số bức ảnh: %d - Số ảnh trùng lặp: %d - Thời gian chạy code: %.2f giây" % (num_images, num_duplicates, elapsed_time))
+
 

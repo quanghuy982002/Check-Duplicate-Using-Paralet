@@ -31,7 +31,7 @@ for i in range(len(image_files)):
 
         # Tính toán chỉ số SSIM
         ssim_score = ssim(img1_gray_resized, img2_gray)
-        print(ssim_score)
+        # print(ssim_score)
         # Nếu chỉ số SSIM > 0.95, coi như 2 ảnh giống nhau và lưu vào danh sách các bức ảnh trùng lặp
         if ssim_score > 0.95:
             duplicates.append((image_files[i], image_files[j]))
